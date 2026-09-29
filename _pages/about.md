@@ -46,13 +46,13 @@ nav: false
   .site-home .entry h3 { font-size: 1.12rem; margin: 0; }
   .site-home .org-logo { height: 32px; max-width: 112px; object-fit: contain; opacity: .9; }
   .site-home .org-logo.square { height: 34px; width: 34px; }
-  .site-home .org-logo.eth { filter: none; }
+  .site-home .org-logo.eth { filter: none; height: 34px; max-width: 128px; object-fit: cover; object-position: center; width: 128px; }
   :root[data-theme="dark"] .site-home .org-logo.eth { filter: invert(1); }
   .site-home .org-logo.safari { height: 54px; max-width: 104px; object-fit: contain; width: 104px; }
   .site-home .entry p { margin: .2rem 0 0; }
   .site-home .date, .site-home .meta { color: var(--site-muted); }
   .site-home .contact { border-top: 1px solid var(--site-line); margin-top: 3rem; padding-top: 1rem; }
-  @media (max-width: 640px) { .site-home { font-size: 1rem; } .site-home .portrait { height: 92px; width: 92px; } .site-home .intro { gap: 1rem; } .site-home .org-logo { max-width: 88px; } .site-home h2 { margin-top: 2.6rem; } }
+  @media (max-width: 640px) { .site-home { font-size: 1rem; } .site-home .portrait { height: 92px; width: 92px; } .site-home .intro { gap: 1rem; } .site-home .org-logo { max-width: 88px; } .site-home .org-logo.eth { max-width: 104px; width: 104px; } .site-home h2 { margin-top: 2.6rem; } }
 </style>
 
 <div class="site-home" markdown="1">
@@ -100,7 +100,7 @@ Feel free to reach out: I’m always happy to chat about low-latency engineering
 
 <div class="vitae">
   <div class="entry"><p class="date">Jun 2026 – Sep 2026</p><div class="entry-head"><h3>Optiver</h3><img class="org-logo" src="/assets/img/logos/optiver.png" alt="Optiver logo"></div><p>Software Engineering Intern | C++ | Low Latency Engineering</p></div>
-  <div class="entry"><p class="date">Sep 2024 – Mar 2027 (expected)</p><div class="entry-head"><h3>ETH Zürich</h3><img class="org-logo square eth" src="/assets/img/logos/eth-zurich-mark.png" alt="ETH Zürich logo"></div><p>MSc in Computer Science | GPA: 5.7/6.0 (expected)</p><p class="meta">Secure &amp; Reliable Systems major | Systems Software minor</p><p class="meta">Relevant coursework: Advanced Operating Systems, Compiler Design, Advanced Computer Architecture, Hardware Security, HPC, Advanced Systems Lab, Synthesis of Digital Circuits</p></div>
+  <div class="entry"><p class="date">Sep 2024 – Mar 2027 (expected)</p><div class="entry-head"><h3>ETH Zürich</h3><img class="org-logo eth" src="/assets/img/logos/eth-zurich-mark.png" alt="ETH Zürich logo"></div><p>MSc in Computer Science | GPA: 5.7/6.0 (expected)</p><p class="meta">Secure &amp; Reliable Systems major | Systems Software minor</p><p class="meta">Relevant coursework: Advanced Operating Systems, Compiler Design, Advanced Computer Architecture, Hardware Security, HPC, Advanced Systems Lab, Synthesis of Digital Circuits</p></div>
   <div class="entry"><p class="date">Jun 2025 – Aug 2025 | Feb 2026 – Jun 2026 | Sep 2026 – present</p><div class="entry-head"><h3>SAFARI Research Group | ETH Zürich</h3><img class="org-logo safari" src="/assets/img/logos/safari-orange.png" alt="SAFARI Research Group logo"></div><p>Research student | Computer architecture and operating systems</p></div>
   <div class="entry"><p class="date">Aug 2023 – Dec 2023</p><div class="entry-head"><h3>University of Illinois Urbana-Champaign</h3><img class="org-logo square" src="/assets/img/logos/uiuc-block-i.svg" alt="University of Illinois logo"></div><p>GPA: 4.0/4.0 | Dean’s List</p><p class="meta">Relevant coursework: Systems Programming, Computer System Organization</p></div>
   <div class="entry"><p class="date">Jul 2024 – Sep 2024</p><div class="entry-head"><h3>Bending Spoons</h3><img class="org-logo" src="/assets/img/logos/bending-spoons.svg" alt="Bending Spoons logo"></div><p>Software Engineering Intern | Backend &amp; Infrastructure Engineering</p></div>
