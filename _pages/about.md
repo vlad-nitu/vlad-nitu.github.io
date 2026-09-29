@@ -14,11 +14,11 @@ nav: false
     --site-accent: #b18426;
   }
   :root[data-theme="dark"] {
-    --site-paper: #171816;
-    --site-ink: #ece9df;
-    --site-muted: #aaa69b;
-    --site-line: #393a34;
-    --site-accent: #d8b45d;
+    --site-paper: #2b2a26;
+    --site-ink: #f1eee6;
+    --site-muted: #c6c0b2;
+    --site-line: #555146;
+    --site-accent: #e0bb68;
   }
   body { background: var(--site-paper); color: var(--site-ink); }
   main { max-width: 760px !important; margin-inline: auto; }
