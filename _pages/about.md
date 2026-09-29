@@ -24,10 +24,7 @@ nav: false
   main { max-width: 760px !important; margin-inline: auto; }
   .theme-toggle { align-items: center; background: transparent; border: 1px solid var(--site-line); border-radius: 50%; color: var(--site-ink); cursor: pointer; display: inline-flex; height: 40px; justify-content: center; position: fixed; right: max(1.25rem, calc((100vw - 900px) / 2)); top: 1.25rem; transition: background .2s, border-color .2s; width: 40px; z-index: 10; }
   .theme-toggle:hover { background: color-mix(in srgb, var(--site-accent) 12%, transparent); border-color: var(--site-accent); }
-  .theme-toggle svg { height: 19px; width: 19px; }
-  .theme-toggle .sun-icon { display: none; }
-  :root[data-theme="dark"] .theme-toggle .moon-icon { display: none; }
-  :root[data-theme="dark"] .theme-toggle .sun-icon { display: block; }
+  .theme-icon { font-family: system-ui, sans-serif; font-size: 1.15rem; line-height: 1; }
   .site-home { font-family: Georgia, 'Times New Roman', serif; font-size: 1.08rem; line-height: 1.7; }
   .site-home h1, .site-home h2, .site-home h3 { color: var(--site-ink); font-family: inherit; font-weight: 500; }
   .site-home h1 { font-size: clamp(2.3rem, 6vw, 3.2rem); letter-spacing: -.045em; line-height: 1.1; margin: .3rem 0 .55rem; }
@@ -61,10 +58,7 @@ nav: false
 
 <div class="site-home" markdown="1">
 
-<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
-  <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.3 15.4A8.5 8.5 0 0 1 8.6 3.7 8.6 8.6 0 1 0 20.3 15.4Z"/></svg>
-  <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-</button>
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span class="theme-icon" aria-hidden="true">☾</span></button>
 
 <header class="intro">
   <div class="intro-copy">
@@ -125,19 +119,17 @@ Feel free to reach out: I’m always happy to chat about low-latency engineering
   (() => {
     const root = document.documentElement;
     const button = document.getElementById('theme-toggle');
+    const icon = button.querySelector('.theme-icon');
     const savedTheme = localStorage.getItem('vlad-theme');
-    if (savedTheme === 'dark') root.setAttribute('data-theme', 'dark');
-    button.addEventListener('click', () => {
-      const dark = root.getAttribute('data-theme') !== 'dark';
+    const applyTheme = (dark) => {
       if (dark) root.setAttribute('data-theme', 'dark');
       else root.removeAttribute('data-theme');
       localStorage.setItem('vlad-theme', dark ? 'dark' : 'light');
+      icon.textContent = dark ? '☼' : '☾';
       button.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
       button.setAttribute('title', `Switch to ${dark ? 'light' : 'dark'} mode`);
-    });
-    if (savedTheme === 'dark') {
-      button.setAttribute('aria-label', 'Switch to light mode');
-      button.setAttribute('title', 'Switch to light mode');
-    }
+    };
+    applyTheme(savedTheme === 'dark');
+    button.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') !== 'dark'));
   })();
 </script>
